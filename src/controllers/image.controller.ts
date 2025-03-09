@@ -68,4 +68,23 @@ export default class TaskController {
    res.json(image) // Vamos retornar a task atualizada
    return
  }
+
+ static async delete (req: Request, res: Response) {
+   const { id } = req.params
+
+   if(!id || isNaN(Number(id))) {
+     res.status(400).json({ error: 'O id é obrigatório' })
+     return
+   }
+
+   const image = await Image.findOneBy({id: Number(id)})
+   if (!image) {
+     res.status(404).json({ error: 'Imagem não encontrada' })
+     return
+   }
+
+   await image.remove()
+   res.status(204).json()
+   return
+ }
 }
