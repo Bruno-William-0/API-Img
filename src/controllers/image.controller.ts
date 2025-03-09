@@ -35,4 +35,10 @@ export default class TaskController {
     res.status(201).json(image)
     return
   }
+
+  static async index (req: Request, res: Response) {
+   const image = await Image.find()
+   res.json(image)
+   return
+ }
 }

@@ -1,8 +1,9 @@
 import { Router } from 'express'
-import TaskController from '../../controllers/image.controller'
+import ImageController from '../../controllers/image.controller'
 
-const taskRoutes = Router()
+const imageRoutes = Router()
 
-taskRoutes.post('/', TaskController.store)
+imageRoutes.post('/save', ImageController.store)
+imageRoutes.get('/list', ImageController.index)
 
-export default taskRoutes
+export default imageRoutes
