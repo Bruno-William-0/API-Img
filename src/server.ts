@@ -4,8 +4,11 @@ import dataBase from './database/ormconfig'
 
 import routes from './routes'
 
+import cors from 'cors'
+
 dotenv.config()
 const app = express()
+app.use(cors()) // habilita o CORS
 const port = process.env.PORT || 3001
 
 app.use(express.json()) // habilita o express para receber dados no formato json
