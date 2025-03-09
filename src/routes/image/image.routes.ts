@@ -5,5 +5,7 @@ const imageRoutes = Router()
 
 imageRoutes.post('/save', ImageController.store)
 imageRoutes.get('/list', ImageController.index)
+imageRoutes.put('/update/:id', ImageController.update)
+
 
 export default imageRoutes
