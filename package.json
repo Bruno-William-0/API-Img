@@ -6,7 +6,8 @@
   "author": "Bruno William",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec ts-node-dev src/server.ts"
+    "dev": "nodemon --exec ts-node-dev src/server.ts",
+    "build": "tsc"
   },
   "dependencies": {
     "dotenv": "^16.4.7",

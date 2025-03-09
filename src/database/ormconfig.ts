@@ -7,10 +7,10 @@ const dataBase = new DataSource({
   type: 'sqlite',
   database: process.env.DATABASE || './src/database/database.sqlite',
   entities: [
-    './src/models/*.ts'
+    join(__dirname, '..', 'models/*.{ts,js}')
   ],
-  logging: true, // log das queries executadas
-  synchronize: true // cria as tabelas automaticamente
+  logging: true,
+  synchronize: true
 })
 
 dataBase.initialize()
